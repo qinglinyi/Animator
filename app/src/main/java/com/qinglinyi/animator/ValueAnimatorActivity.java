@@ -7,6 +7,7 @@ import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.widget.CheckBox;
 
 import com.qinglinyi.animator.view.SingleLineView;
@@ -17,7 +18,8 @@ public class ValueAnimatorActivity extends AppCompatActivity implements View.OnC
     private ValueAnimator mXmlValueAnimator;
     private SingleLineView mCodeLine;
     private SingleLineView mXmlLine;
-    private CheckBox mCheckBox;
+    private CheckBox mEvaluatorCheckBox;
+    private CheckBox mInterpolatorCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,8 @@ public class ValueAnimatorActivity extends AppCompatActivity implements View.OnC
 
         mCodeLine = (SingleLineView) findViewById(R.id.codeLine);
         mXmlLine = (SingleLineView) findViewById(R.id.xmlLine);
-        mCheckBox = (CheckBox) findViewById(R.id.checkBox);
+        mEvaluatorCheckBox = (CheckBox) findViewById(R.id.evaluatorCheckBox);
+        mInterpolatorCheckBox = (CheckBox) findViewById(R.id.interpolatorCheckBox);
     }
 
     @Override
@@ -48,19 +51,22 @@ public class ValueAnimatorActivity extends AppCompatActivity implements View.OnC
         if (mCodeValueAnimator == null) {
             mCodeValueAnimator = ValueAnimator.ofFloat(0f, 800f);
             // 使用监听器监听动画属性值变化，更新到目标对象
-            mCodeValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    float i = (float) animation.getAnimatedValue();
-                    mCodeLine.setmX(i);
-                }
-            });
+            mCodeValueAnimator.addUpdateListener(
+                    new ValueAnimator.AnimatorUpdateListener() {
+                        @Override
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            float i = (float) animation.getAnimatedValue();
+                            mCodeLine.setmX(i);
+                        }
+                    });
             mCodeValueAnimator.setDuration(1000);
         } else {
             mCodeValueAnimator.end();
         }
         // 根据CheckBox设置Evaluator
-        mCodeValueAnimator.setEvaluator(mCheckBox.isChecked() ? new MyEvaluator() : new FloatEvaluator());
+        mCodeValueAnimator.setEvaluator(mEvaluatorCheckBox.isChecked()
+                ? new MyEvaluator()
+                : new FloatEvaluator());
         mCodeValueAnimator.start();
     }
 
@@ -74,10 +80,13 @@ public class ValueAnimatorActivity extends AppCompatActivity implements View.OnC
                     mXmlLine.setmX(i);
                 }
             });
-
         } else {
             mXmlValueAnimator.end();
         }
+
+        mXmlValueAnimator.setInterpolator(mInterpolatorCheckBox.isChecked()
+                ? new BounceInterpolator()
+                : null);
         mXmlValueAnimator.start();
     }
 

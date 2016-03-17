@@ -13,7 +13,7 @@
     tools:context="com.qinglinyi.animator.ValueAnimatorActivity">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/evaluatorCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="使用Evaluator"/>
@@ -33,6 +33,11 @@
         android:layout_marginTop="20dp"
         android:background="#54af62"/>
 
+    <CheckBox
+        android:id="@+id/interpolatorCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用Interpolator(BounceInterpolator)"/>
     <Button
         android:id="@+id/begin_1_btn"
         android:layout_width="wrap_content"

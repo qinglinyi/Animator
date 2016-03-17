@@ -3,5 +3,4 @@
           android:duration="1000"
           android:valueFrom="1"
           android:valueTo="800"
-          android:valueType="floatType"
-         />
+          android:valueType="floatType"/>
