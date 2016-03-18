@@ -11,13 +11,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.toSingleValueAnimator:
+                startActivity(new Intent(this, SimpleValueAnimatorActivity.class));
+                break;
             case R.id.toValueAnimator:
                 startActivity(new Intent(this, ValueAnimatorActivity.class));
                 break;

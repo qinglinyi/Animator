@@ -12,13 +12,23 @@
     tools:context="com.qinglinyi.animator.MainActivity">
 
     <Button
+        android:id="@+id/toSingleValueAnimator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
         android:onClick="onClick"
+        android:text="@string/main_btn_simple_value_animator"
+        android:textColor="@color/white"/>
+
+    <Button
         android:id="@+id/toValueAnimator"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
-        android:text="ValueAnimator"
+        android:onClick="onClick"
+        android:text="@string/main_btn_value_animator"
         android:textColor="@color/white"/>
 
 </LinearLayout>
