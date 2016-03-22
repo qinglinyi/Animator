@@ -63,7 +63,7 @@ public class SimpleValueAnimatorActivity extends AppCompatActivity implements Vi
                         @Override
                         public void onAnimationUpdate(ValueAnimator animation) {
                             float i = (float) animation.getAnimatedValue();
-                            mCodeLine.setmX(i);
+                            mCodeLine.setMyX(i);
                         }
                     });
             mCodeValueAnimator.setDuration(1000);
@@ -85,7 +85,7 @@ public class SimpleValueAnimatorActivity extends AppCompatActivity implements Vi
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     float i = (float) animation.getAnimatedValue();
-                    mXmlLine.setmX(i);
+                    mXmlLine.setMyX(i);
                 }
             });
         } else {

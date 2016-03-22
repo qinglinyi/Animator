@@ -15,7 +15,7 @@ public class SingleLineView extends View {
 
     private Paint mPaint;
     private Paint mPaintV;
-    private float mX;
+    private float myX;
     private int mColor;
     private int time;
 
@@ -55,11 +55,15 @@ public class SingleLineView extends View {
         if (time!=0){
             canvas.drawText(timeStr, 0, timeStr.length(), 10, 50, mPaintV);
         }
-        canvas.drawRect(0, mY, mX, mY + 10, mPaint);
+        canvas.drawRect(0, mY, myX, mY + 10, mPaint);
     }
 
-    public void setmX(float mX) {
-        this.mX = mX;
+    public float getMyX(){
+        return myX;
+    }
+
+    public void setMyX(float myX) {
+        this.myX = myX;
         // 刷新
         invalidate();
     }
@@ -75,6 +79,6 @@ public class SingleLineView extends View {
 
     public void updateView(float x, int color) {
         this.mColor = color;
-        setmX(x);
+        setMyX(x);
     }
 }

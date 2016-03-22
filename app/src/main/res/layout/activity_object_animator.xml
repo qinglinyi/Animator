@@ -9,35 +9,37 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.qinglinyi.animator.MainActivity">
+    tools:context="com.qinglinyi.animator.ObjectAnimatorActivity">
+
 
     <Button
-        android:id="@+id/toSingleValueAnimator"
+        android:id="@+id/begin_0_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="code开始"/>
+
+    <com.qinglinyi.animator.view.SingleLineView
+        android:id="@+id/codeLine"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:onClick="onClick"
-        android:text="@string/main_btn_simple_value_animator"
-        android:textColor="@color/white"/>
+        android:background="#54af62"/>
 
     <Button
-        android:id="@+id/toValueAnimator"
+        android:id="@+id/begin_1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="xml开始"/>
+
+    <com.qinglinyi.animator.view.SingleLineView
+        android:id="@+id/xmlLine"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:onClick="onClick"
-        android:text="@string/main_btn_value_animator"
-        android:textColor="@color/white"/>
-    <Button
-        android:id="@+id/toObjectAnimator"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:onClick="onClick"
-        android:text="@string/main_btn_object_animator"
-        android:textColor="@color/white"/>
+        android:background="#bbccdd"/>
 
 </LinearLayout>

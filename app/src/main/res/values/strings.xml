@@ -2,9 +2,11 @@
     <string name="app_name">Animator</string>
     <string name="title_simple_value_animator">SimpleValueAnimatorActivity</string>
     <string name="title_value_animator">ValueAnimatorActivity</string>
+    <string name="title_object_animator">ObjectAnimatorActivity</string>
 
 
     <string name="main_btn_simple_value_animator">简单的ValueAnimator例子</string>
     <string name="main_btn_value_animator">ValueAnimator例子</string>
+    <string name="main_btn_object_animator">ObjectAnimator例子</string>
 
 </resources>

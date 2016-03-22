@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.toValueAnimator:
                 startActivity(new Intent(this, ValueAnimatorActivity.class));
                 break;
+            case R.id.toObjectAnimator:
+                startActivity(new Intent(this, ObjectAnimatorActivity.class));
+                break;
             default:
 
                 break;

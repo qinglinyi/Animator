@@ -24,6 +24,10 @@
             android:name=".ValueAnimatorActivity"
             android:label="@string/title_value_animator">
         </activity>
+        <activity
+            android:name=".ObjectAnimatorActivity"
+            android:label="@string/title_object_animator">
+        </activity>
     </application>
 
 </manifest>
